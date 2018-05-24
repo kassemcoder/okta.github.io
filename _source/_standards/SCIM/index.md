@@ -242,6 +242,7 @@ moment, Okta supports authentication against SCIM APIs with one of
 the following methods:
 
 1. [OAuth 2.0 Authorization Code Grant Flow](https://tools.ietf.org/html/rfc6749#section-4.1)
+> After a user successfully authorizes okta, the authorization server of your app will redirect the user, with either an authorization code or access token, back to okta. Your app might redirect it to multiple [redirection endpoints](https://www.oauth.com/oauth2-servers/redirect-uris/), depending on the environment in okta, which could be one of the following: [https://org.okta.com](https://org.okta.com), [https://org.oktaemea.com](https://org.oktaemea.com) or [https://org.oktapreview.com](https://org.oktapreview.com).
 2. [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
 3. Custom HTTP Header
 
