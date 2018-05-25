@@ -247,7 +247,7 @@ the following methods:
 
 > After a user successfully authorizes Okta using OAuth 2.0, the authorization server of your app will redirect the user back to Okta with either an authorization code or access token.
 > 
-> Okta requires all SCIM applications to support all the following redirect URL's:
+> Okta requires all SCIM applications to support all the following [redirect URI's](https://tools.ietf.org/html/rfc6749#section-3.1.2):
 > - [http://system-admin.okta1.com:1802/admin/app/cpc/{appName}/oauth/callback](http://system-admin.okta1.com:1802/admin/app/cpc/{appName}/oauth/callback)
 > - [https://system-admin.trexcloud.com/admin/app/cpc/{appName}/oauth/callback](https://system-admin.trexcloud.com/admin/app/cpc/{appName}/oauth/callback)
 > - [https://system-admin.oktapreview.com/admin/app/cpc/{appName}/oauth/callback](https://system-admin.oktapreview.com/admin/app/cpc/{appName}/oauth/callback)
@@ -256,7 +256,7 @@ the following methods:
 >
 > where `{appName}` will be provided after the submission is processed. 
 >
-> Your app MUST support all the redirect URL's listed above.
+> Your app MUST support all the redirect URI's listed above.
 
 > Okta doesn't support OAuth 2.0 [Resource Owner Password Credentials grant flows](https://tools.ietf.org/html/rfc6749#section-1.3.3).
 
