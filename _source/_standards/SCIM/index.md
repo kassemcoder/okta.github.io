@@ -242,9 +242,21 @@ moment, Okta supports authentication against SCIM APIs with one of
 the following methods:
 
 1. [OAuth 2.0 Authorization Code Grant Flow](https://tools.ietf.org/html/rfc6749#section-4.1)
-> After a user successfully authorizes Okta, the authorization server of your app will redirect the user, with either an authorization code or access token, back to Okta. The [redirection endpoint](https://www.oauth.com/oauth2-servers/redirect-uris/) is in a form of [https://system-admin.{oktaDomain}.com/admin/app/cpc/{AppName}/oauth/authorize](https://system-admin.{oktaDomain}.com/admin/app/cpc/{appName}/oauth/authorize), where the `{oktaDomain}` could be one of the following -- trexcloud, oktapreview, okta or oktaemea, and the `{appName}` will be provided after the submission is processed. Your app may support the multiple redirect URLs above.
 2. [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
 3. Custom HTTP Header
+
+> After a user successfully authorizes Okta using OAuth 2.0, the authorization server of your app will redirect the user back to Okta with either an authorization code or access token.
+> 
+> Okta requires all SCIM applications to support all the following redirect URL's:
+> - [http://system-admin.okta1.com:1802/admin/app/cpc/{appName}/oauth/callback](http://system-admin.okta1.com:1802/admin/app/cpc/{appName}/oauth/callback)
+> - [https://system-admin.trexcloud.com/admin/app/cpc/{appName}/oauth/callback](https://system-admin.trexcloud.com/admin/app/cpc/{appName}/oauth/callback)
+> - [https://system-admin.oktapreview.com/admin/app/cpc/{appName}/oauth/callback](https://system-admin.oktapreview.com/admin/app/cpc/{appName}/oauth/callback)
+> - [https://system-admin.okta.com/admin/app/cpc/{appName}/oauth/callback](https://system-admin.okta.com/admin/app/cpc/{appName}/oauth/callback)
+> - [https://system-admin.okta-emea.com/admin/app/cpc/{appName}/oauth/callback](https://system-admin.okta-emea.com/admin/app/cpc/{appName}/oauth/callback)
+>
+> where `{appName}` will be provided after the submission is processed. 
+>
+> Your app MUST support all the redirect URL's listed above.
 
 > Okta doesn't support OAuth 2.0 [Resource Owner Password Credentials grant flows](https://tools.ietf.org/html/rfc6749#section-1.3.3).
 
